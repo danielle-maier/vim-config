@@ -10,6 +10,9 @@ set number
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
+map <C-n> :NERDTreeToggle<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 set hidden
 set history=100
@@ -32,7 +35,6 @@ set showmatch
 
 let NERDTreeMapActivateNode='<right>'
 let NERDTreeShowHidden=1
-nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
@@ -71,3 +73,32 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+" Gist
+let g:gist_open_browser_after_post = 1
+
+" CSS Colors
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" Commenting
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = {
+ \    'jsx': { 'left': '{/*','right': '*/}' },
+ \    'typescript.tsx': { 'left': '{/*','right': '*/}' }
+ \  }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+" Vue
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+" lightline
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
